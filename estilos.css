@@ -1,0 +1,174 @@
+:root {
+  --color-fondo: #fff8fa;
+  --color-texto: #4a3b46;
+  --rosa-oscuro: #75485f;
+  --rosa-medio: #95647c;
+  --rosa-tarjeta: #8d5c74;
+  --rosa: #e3b2c5;
+  --rosa-hover: #d49ab1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+a { color: inherit; }
+h1, h2, h3 { font-family: "Trebuchet MS", Arial, sans-serif; }
+
+.encabezado {
+  background: linear-gradient(135deg, var(--rosa-oscuro), var(--rosa-medio));
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.encabezado-marca { display: flex; align-items: center; gap: 15px; }
+.logo { width: 60px; height: 60px; border-radius: 50%; border: 3px solid #fff; }
+.encabezado h1 { font-size: 2rem; }
+.menu { display: flex; flex-wrap: wrap; gap: 8px; }
+.menu a {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+.menu a:hover { background: rgba(255, 255, 255, 0.25); }
+
+.seccion { padding: 60px 40px; max-width: 1100px; margin: 0 auto; }
+.seccion-oscura {
+  background: var(--rosa-oscuro);
+  color: #fff;
+  max-width: none;
+}
+.seccion-oscura > * { max-width: 1020px; margin-left: auto; margin-right: auto; }
+.seccion h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.nota { text-align: center; font-size: 0.9rem; margin-top: 20px; opacity: 0.8; }
+
+.presentacion { display: flex; gap: 40px; align-items: center; }
+.presentacion-foto { flex: 0 1 240px; }
+.presentacion-foto img { width: 100%; border-radius: 16px; display: block; }
+.presentacion-texto { flex: 1; }
+.presentacion-texto p { margin-bottom: 8px; }
+.biografia { margin-top: 15px; }
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.galeria-item { overflow: hidden; border: 1px solid #ead8e1; border-radius: 4px; }
+.galeria-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.video-caja { max-width: 800px; margin: 0 auto; }
+.video-caja video { width: 100%; border-radius: 6px; background: #000; display: block; }
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.tarjeta {
+  background: #f5e7ee;
+  color: var(--color-texto);
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cancion-imagen { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; }
+.tarjeta audio { width: 100%; }
+.boton {
+  background: var(--rosa);
+  color: var(--color-texto);
+  text-decoration: none;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.boton:hover { background: var(--rosa-hover); }
+.enlace-letra { text-align: center; font-size: 0.9rem; }
+
+.letra {
+  background: #fffdfd;
+  border: 1px solid #ead8e1;
+  border-radius: 6px;
+  padding: 18px;
+  margin-bottom: 18px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.letra h3 { margin-bottom: 10px; }
+.letra audio { width: 100%; margin-bottom: 15px; }
+.letra-texto { font-size: 1rem; }
+.letra-texto p { margin-bottom: 0; }
+.volver { display: inline-block; margin-top: 10px; color: var(--rosa-oscuro); font-weight: bold; }
+
+.conciertos { display: flex; flex-direction: column; gap: 12px; }
+.concierto {
+  background: var(--rosa-tarjeta);
+  padding: 12px 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pie {
+  background: #543546;
+  color: #fff;
+  text-align: center;
+  padding: 35px 20px;
+}
+.redes { margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.redes a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.redes a:hover { color: var(--rosa); }
+
+#subir {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  background: var(--rosa);
+  color: var(--color-texto);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 700px) {
+  .encabezado { padding: 15px 20px; justify-content: center; text-align: center; }
+  .encabezado h1 { font-size: 1.5rem; }
+  .seccion { padding: 40px 20px; }
+  .menu { justify-content: center; }
+  .presentacion { flex-wrap: wrap; }
+  .presentacion-foto { flex-basis: 200px; }
+}
